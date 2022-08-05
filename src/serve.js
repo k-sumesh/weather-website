@@ -2,6 +2,7 @@ import express from "express";
 import { fileURLToPath } from "url";
 import path from "path";
 import hbs from 'hbs'
+const port =process.env.PORT||3000
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const publicPath = path.join(__dirname, "/public");
@@ -50,6 +51,6 @@ app.get('/products',(req,res)=>{
 app.get('*',(req,res)=>{
     res.render('not-found')
 })
-app.listen(3000, () => {
+app.listen(port, () => {
   console.log("app is being listening to port 3000");
 });
